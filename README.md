@@ -16,23 +16,32 @@ one-to-one and onto function (bijection) $f: V_1 \rightarrow V_2$ such that $(u,
 
 To prove that two completely connected graphs $A$ and $B$, each with the same number of nodes, are isomorphic, we can utilize a proof by contradiction based on the formal definition of graph isomorphism.
 
+### Objective
+
+The goal is to prove that if two graphs, $\(A\)$ and $\(B\)$, are both fully connected (meaning every node connects to all others) and have the same number of nodes, they must be isomorphic.
+
 ### Formal Definition of Isomorphism
 
 Two graphs $G_1=(V_1, E_1)$ and $G_2=(V_2, E_2)$ are isomorphic if there exists a bijection $f: V_1 \rightarrow V_2$ such that for any pair of vertices $(u,v) \in E_1$, it is true that $(f(u),f(v)) \in E_2$, and vice versa.
 
-### Assumption for Contradiction
+### Assuming the Opposite
 
-Assume that two completely connected graphs $G_1$ and $G_2$, each with the same number of nodes, are not isomorphic despite having a bijection $f: V_1 \rightarrow V_2$.
+We can start by assuming $\(G_1\)$ and $\(G_2\)$ are not isomorphic, despite being fully connected and having an equal number of nodes. This means we're saying there's no possible bijection between their nodes that keeps the connections intact.
 
-### Analysis of the Assumption
+### Understanding Full Connectivity
 
-- **Complete Connectivity**: By definition, in completely connected graphs (or complete graphs), there is an edge between every pair of distinct vertices. Therefore, for each graph with $n$ nodes, every node is connected to $n-1$ other nodes, resulting in $\frac{n(n-1)}{2}$ edges in total.
+In fully connected graphs, every node connects to every other node. So, if there are $n$ nodes, each node connects to $n−1$ other nodes
 
-- **Identifying Contradiction**: Considering that both $G_1$ and $G_2$ are fully connected, and assuming a bijection $f$ exists; the nature of a fully connected graph implies that if there's a connection (edge) between two nodes $(u,v)$ in $G_1$, then there must be a matching connection between their counterparts $(f(u),f(v))$ in $G_2$. This is because in a fully connected graph, all nodes are linked to each other, which is true for both $G_1$ and $G_2$. 
+### Finding the Contradiction
 
-  - **Why They Must Be Isomorphic**: This shows that the initial assumption of non-isomorphism contradicts the properties of complete connectivity and bijection. If two graphs are not isomorphic, it means you can't match up their nodes in a way that keeps all the connections between nodes the same in both graphs. The features of complete graphs and the definition of bijection ensure that the adjacency relationship is preserved (keeping connections between nodes the same when mapping from one graph to another), which is the primary condition for isomorphism.
+Given both $\(G_1\)$ and $\(G_2\)$ are fully connected with the same number of nodes $(n)$:
 
-### Conclusion
+- Trying to pair any node from $G_1$ with any node from $\(G_2\)$ must maintain all connections due to the full connectivity. Every node has a connection with every other node, making mismatch impossible.
+  
+- This leads us to a contradiction of our initial assumption. Since both graphs are fully connected, with each node linked to every other, there's essentially only one pattern their connections can follow. This inherent property of full connectivity ensures the existence of a bijection $f$, a perfect one-to-one match between the nodes of $\(G_1\$ and $\(G_2\)$, that maintains this pattern. Our original assumption, doubting that such a bijection could exist, is contradicted by the nature of full connectivity. As it guarantees any bijection $f$ will keep the universal pattern of connections, clearly proving the graphs are isomorphic.
 
-The assumption that two completely connected graphs with the same number of nodes are not isomorphic leads to a contradiction when considering the implications of complete connectivity and bijection. Therefore, such graphs must be isomorphic, proving that if two graphs have the same number of nodes and are completely connected, they inherently satisfy the conditions for isomorphism.
+## Conclusion
+
+The assumption that two fully connected graphs with the same number of nodes could not be isomorphic contradicts the inherent property of full connectivity. This property guarantees that a bijection $f$ that preserves connectivity must exist, proving the two graphs are isomorphic. Thus, if two graphs are fully connected and have an equal number of nodes, they inherently satisfy the conditions for isomorphism, showing they share the same structural connectivity.
+
 
